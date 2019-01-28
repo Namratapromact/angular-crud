@@ -1,0 +1,63 @@
+
+  
+  .header_toolbar{
+    padding-left: 50px;
+  }
+  .spacer {
+    /* flex: 1 1 auto; */
+    margin: 0px auto;
+  }
+  .margin20 {
+    margin-left: 20px;
+  }
+ 
+  .mat-toolbar.mat-primary {
+    font-size: 25px;
+  }
+
+ .option{
+    padding: 0px 50px;
+    width: 765px;
+    margin-top: 45px;
+
+    .mat-toolbar.option_one_toolbar{
+      margin-right: 0;
+      background-color: Gainsboro;
+    }
+    .icon-right{
+      margin: 0px auto;
+      margin-right: 0px;
+      padding-left: 0px;
+
+      em{
+        cursor: pointer;
+      }
+
+      .mright20{
+        margin-right: 20px;
+      }
+    }
+
+    .input-text{
+      background-color: #fafafa;
+      padding: 20px 30px;
+      padding-bottom: 55px;
+      .example-form{
+        float: left;
+      }
+      
+
+    }
+    .error{
+      position: absolute;
+      bottom: -21px;
+      font-size: 12px;
+    }
+  }
+
+  .option_dropdown{
+    padding: 20px 0px 0px 50px;
+  }
+
+ 
+  

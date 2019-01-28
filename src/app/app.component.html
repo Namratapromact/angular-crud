@@ -1,0 +1,67 @@
+<!-- Header Section start  -->
+<div class="header">
+  <mat-toolbar color="primary" class="example-toolbar header_toolbar">
+    
+      <span class="title">Angular CRUD</span>
+      
+        <span class="spacer"></span>
+
+
+  </mat-toolbar>
+</div>
+
+<!-- Header Section end  -->
+
+<!-- Option Section start-->
+<!-- Select option -->
+<div class="option_dropdown">
+<mat-form-field>
+    <mat-select placeholder="Select Option" [(ngModel)]="selectedOption" (selectionChange)="showContent()">
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        {{option.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Signout Button -->
+  
+  <button mat-raised-button class="margin20" (click)="show()">Submit</button>
+</div>
+
+
+<div *ngFor="let option of options">
+<div class="option" id={{option.viewValue}} *ngIf="option.value == selectedOption && isVisible">
+  <mat-toolbar class="option_one_toolbar">
+    <mat-toolbar-row>
+      <!-- {{isVisible}} -->
+      <span>{{option.viewValue}}</span>
+      <div class="icon-right">
+      <em class="material-icons mright20" (click)="edit()">mode_edit</em>
+      <em class="material-icons" (click)="delete(option.value)">delete</em>
+      </div>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="input-text" *ngIf="isVisible1">
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="{{option.viewValue}}" [(ngModel)]="addValue" name="first">
+        
+        <div *ngIf="showError" class="error">
+        <mat-error>
+         Option Already Exist
+        </mat-error>
+      </div>
+
+      </mat-form-field>
+    </form>
+    <button mat-raised-button class="margin20 check-btn" (click)="addElement(addValue)">Add</button>
+  </div>
+</div>
+</div>
+
+<!-- Option One Section end-->
+
+
+
+<router-outlet></router-outlet>
